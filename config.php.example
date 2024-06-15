@@ -1,0 +1,11 @@
+<?php
+
+return [
+    'database' => [
+        'host' => 'HOST_AQUI',
+        'username' => 'USUARIO_AQUI',
+        'password' => 'SENHA_AQUI',
+        'database' => 'NOME_DO_BANCO_AQUI',
+    ],
+    'basePath' => 'http://127.0.0.1/nfstore/',
+];

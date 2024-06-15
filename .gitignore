@@ -1,0 +1,12 @@
+assets/img/products
+/vendor/
+/config.php
+/node_modules/
+/.env
+/.idea/
+*.log
+.DS_Store
+
+html/
+html-starter/
+teste.html

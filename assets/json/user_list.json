@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "UserID": 1,
+      "Username": "admin",
+      "Password": "d82494f05d6917ba02f7aaa29689ccb444bb73f20380876cb05d1f37537b7892",
+      "Email": "admin@admin.com",
+      "CreationDate": "2023-12-11 06:02:29",
+      "LastLogin": null,
+      "AccountStatus": "Ativo",
+      "Role": "Administrador"
+    },
+    {
+      "UserID": 2,
+      "Username": "laelrf",
+      "Password": "$2y$10$ZkWptp0aiksABoWbLJUF/u.5c4DNCpPdbBEcfqnKuHX3a2B8fZldK",
+      "Email": "laelrf@gmail.com",
+      "CreationDate": "2023-12-11 07:28:26",
+      "LastLogin": null,
+      "AccountStatus": "Ativo",
+      "Role": "Usuário"
+    },
+    {
+      "UserID": 3,
+      "Username": "argrdrgag",
+      "Password": "$2y$10$R1hVZMuo33BZsS08xAFsoOmTtPCqRPcwspqr.FeP3POqhHXKJA6tq",
+      "Email": "argrdrgag@admin.com",
+      "CreationDate": "2023-12-11 07:56:05",
+      "LastLogin": null,
+      "AccountStatus": "Ativo",
+      "Role": "Usuário"
+    },
+    {
+      "UserID": 4,
+      "Username": "lalala",
+      "Password": "$2y$10$I3VfufAuBSBKqDvoAcEjpuXdKW.wpAle47vspAX6Qp/7R7hOlGGOa",
+      "Email": "lalala@admin.com",
+      "CreationDate": "2023-12-11 09:06:28",
+      "LastLogin": null,
+      "AccountStatus": "Ativo",
+      "Role": "Usuário"
+    }
+  ]
+}
