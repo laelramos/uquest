@@ -119,3 +119,64 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+INSERT INTO `disciplinas` (`id_disciplina`, `nome_disciplina`, `desc_disciplina`, `path_disciplina`, `IsDeleted`) VALUES
+(1, 'Segurança em Tecnologia da Informação', NULL, 'dsc_666bc497d72b7.png', NULL),
+(9, 'Experiência Profissional: Carreira e Sucesso', '', NULL, NULL);
+
+INSERT INTO `questoes` (`id_questao`, `id_disciplina`, `tipo_questao`, `enunciado_questao`, `img_questao`) VALUES
+(1, 1, 1, 'questao segurança 1', NULL),
+(2, 1, 1, 'questao segurança 2', NULL),
+(3, 1, 1, 'questao segurança 3', NULL),
+(4, 1, 1, 'questao segurança 4', NULL),
+(5, 9, 1, 'questao experiencia 1', NULL),
+(6, 9, 1, 'questao experiencia 2', NULL),
+(7, 9, 1, 'questao experiencia 3', NULL),
+(8, 9, 1, 'questao experiencia 4', NULL);
+
+INSERT INTO `questoes_alternativas` (`id_alternativa`, `id_questao`, `texto_alternativa`, `correta`) VALUES
+(1, 1, 'alternativa 1 questao segurança 1', 1),
+(2, 1, 'alternativa 2 questao segurança 1', 0),
+(3, 1, 'alternativa 3 questao segurança 1', 0),
+(4, 1, 'alternativa 4 questao segurança 1', 0),
+(5, 2, 'alternativa 1 questao segurança 2', 0),
+(6, 2, 'alternativa 2 questao segurança 2', 0),
+(7, 2, 'alternativa 3 questao segurança 2', 0),
+(8, 2, 'alternativa 4 questao segurança 2', 1),
+(9, 3, 'alternativa 1 questao segurança 3', 0),
+(10, 3, 'alternativa 2 questao segurança 3', 1),
+(11, 3, 'alternativa 3 questao segurança 3', 0),
+(12, 3, 'alternativa 4 questao segurança 3', 0),
+(13, 4, 'alternativa 1 questao segurança 4', 0),
+(14, 4, 'alternativa 2 questao segurança 4', 0),
+(15, 4, 'alternativa 3 questao segurança 4', 1),
+(16, 4, 'alternativa 4 questao segurança 4', 0),
+(17, 5, 'alternativa 1 questao experiencia 1', 1),
+(18, 5, 'alternativa 2 questao experiencia 1', 0),
+(19, 5, 'alternativa 3 questao experiencia 1', 0),
+(20, 5, 'alternativa 4 questao experiencia 1', 0),
+(21, 6, 'alternativa 1 questao experiencia 2', 0),
+(22, 6, 'alternativa 2 questao experiencia 2', 1),
+(23, 6, 'alternativa 3 questao experiencia 2', 0),
+(24, 6, 'alternativa 4 questao experiencia 2', 0),
+(25, 7, 'alternativa 1 questao experiencia 3', 0),
+(26, 7, 'alternativa 2 questao experiencia 3', 0),
+(27, 7, 'alternativa 3 questao experiencia 3', 1),
+(28, 7, 'alternativa 4 questao experiencia 3', 0),
+(29, 8, 'alternativa 1 questao experiencia 4', 0),
+(30, 8, 'alternativa 2 questao experiencia 4', 0),
+(31, 8, 'alternativa 3 questao experiencia 4', 0),
+(32, 8, 'alternativa 4 questao experiencia 4', 1);
+
+INSERT INTO `questoes_tipo` (`id_tipo`, `nome_tipo`) VALUES
+(1, 'Objetiva'),
+(2, 'Discursiva');
+
+INSERT INTO `users` (`UserID`, `Username`, `Function`, `Password`, `Email`, `CreationDate`, `LastLogin`, `AccountStatus`, `Role`) VALUES
+(23, 'admin', 0, '$2y$10$P8XtyCm4nQF8FnRwnUdn4.NmdgaoAIsf1r76fJDP1On7nWIBvXyn2', 'admin@admin.com', '2024-06-13 22:10:03', '2024-06-13 22:10:12', 'Ativo', 'Usuário');
+
+INSERT INTO `user_tokens` (`TokenID`, `UserID`, `Token`, `Expiration`) VALUES
+(0, 23, 'a4daae98b4d52d326bd8fe70e3df23aabff95db3ac66d6ec5999416e61c8263c8c16950a2ea95caf880124ee38cca28dfb54ce771b8dd975a44eb5c27e3a4cd0', '2024-08-13 03:10:12');
