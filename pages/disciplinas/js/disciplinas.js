@@ -6,7 +6,6 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (data) {
             data.forEach(function (disciplina) {
-                // Verifica se existe um caminho para a imagem, caso contrário, usa a imagem padrão
                 var imagePath = disciplina.path_disciplina ? '../../assets/img/disciplinas/' + disciplina.path_disciplina : '../../assets/img/default/defaultDisciplina.png';
                 var pagedisciplina = '../questoes/questoes.php?id=' + disciplina.id_disciplina;
 
@@ -24,12 +23,10 @@ $(document).ready(function () {
                             </a>
                         </div>`;
 
-                // Adiciona o HTML ao elemento pai na página
                 $('#listadisciplinas').append(disciplinaHTML);
             });
         },
         error: function (xhr, status, error) {
-            // Trata o erro
             console.error(error);
         }
     });

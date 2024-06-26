@@ -12,7 +12,7 @@ require_once '../../includes/authcheck.php';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Home | Questões</title>
+    <title>Home | Blank</title>
 
     <meta name="description" content="" />
 
@@ -25,8 +25,8 @@ require_once '../../includes/authcheck.php';
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="../../assets/vendor/fonts/tabler-icons.css" />
-    <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" /> -->
-    <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" /> -->
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
@@ -37,11 +37,11 @@ require_once '../../includes/authcheck.php';
     <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/plyr/plyr.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/quill/typography.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/quill/katex.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/quill/editor.css" />
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/css/pages/app-academy.css" />
 
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
@@ -73,35 +73,27 @@ require_once '../../includes/authcheck.php';
 
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <div class="app-academy">
-                            <div class="card p-0 mb-4">
-                                <div class="card-body d-flex flex-column flex-md-row justify-content-between p-0 pt-4">
-                                    <div class="app-academy-md-25 card-body py-0">
-                                        <img src="../../assets/img/disciplinas/dsc_666bc497d72b7.png" class="img-fluid app-academy-img-height scaleX-n1-rtl" height="90" />
-                                    </div>
-                                    <div class="app-academy-md-50 card-body d-flex align-items-md-center flex-column text-md-center">
-                                        <h3 class="card-title mb-4 lh-sm px-md-5 lh-lg" id="conteudoPrincipal">
+                        <h6 class="py-3 mb-4">Nova Questão</h6>
 
-                                        </h3>
+                        <!-- Full Editor -->
+                        <div class="col-12">
+                            <div class="card">
+                                <form class="card-body">
+                                    <h6>Enunciado da Questão</h6>
+                                    <div id="full-editor"></div>
+                                    <hr class="my-4 mx-n4" />
 
-                                        <div class="d-flex align-items-center justify-content-between app-academy-md-80">
-                                            <input type="search" placeholder="Pesquise por uma questão" class="form-control me-2" id="searchInput" />
-                                            <button type="submit" class="btn btn-primary btn-icon"><i class="ti ti-search"></i></button>
-                                        </div>
+
+
+
+                                    <div class="pt-4">
+                                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Enviar</button>
+                                        <button type="reset" class="btn btn-label-secondary">Cancelar</button>
                                     </div>
-                                    <div class="app-academy-md-25 d-flex align-items-end justify-content-end">
-                                        <img src="../../assets/img/illustrations/pencil-rocket.png" alt="pencil rocket" height="108" class="scaleX-n1-rtl" />
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div id="listaQuestoes" class="accordion mt-3 accordion-without-arrow">
-
-                                </div>
-                            </div>
-                        </div>
+                        <!-- /Full Editor -->
                     </div>
                     <!-- / Content -->
 
@@ -142,15 +134,34 @@ require_once '../../includes/authcheck.php';
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="../../assets/vendor/libs/select2/select2.js"></script>
-    <script src="../../assets/vendor/libs/plyr/plyr.js"></script>
+    <script src="../../assets/vendor/libs/quill/katex.js"></script>
+    <script src="../../assets/vendor/libs/quill/quill.js"></script>
 
     <!-- Main JS -->
     <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="js/questoes.js"></script>
-    <script src="../../assets/js/app-academy-course.js"></script>
+    <script src="js/forms-editors.js"></script>
+    <script src="js/new-questao.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const checkboxes = document.querySelectorAll('.form-check-input');
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        checkboxes.forEach((cb) => {
+                            if (cb !== this) {
+                                cb.checked = false;
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
 
 </body>
 

@@ -4,7 +4,6 @@
 require_once __DIR__ . '/../../../init.php';
 require_once '../../../includes/authcheck.php';
 
-// Modifique esta consulta para incluir um JOIN com a tabela 'functions'
 $sql = "SELECT users.UserID, users.Username, functions.nameFunction, users.Email, users.CreationDate, users.LastLogin, users.AccountStatus, users.Role
         FROM users 
         JOIN functions ON users.Function = functions.idFunction";

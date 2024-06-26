@@ -4,7 +4,6 @@
 require_once __DIR__ . '/../../../init.php';
 require_once '../../../includes/authcheck.php';
 
-// Query para buscar disciplinas
 $sql = "SELECT id_disciplina, 
                nome_disciplina, 
                path_disciplina 
@@ -19,8 +18,6 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Fechar conexão
 $conn->close();
 
-// Retornar os disciplinas em formato JSON
 echo json_encode($disciplinas);

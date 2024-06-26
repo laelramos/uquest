@@ -1,7 +1,21 @@
 $(document).ready(function () {
-    // Obtém o ID da disciplina da URL
     var urlParams = new URLSearchParams(window.location.search);
     var id_disciplina = urlParams.get('id');
+
+    $.ajax({
+        url: 'actions/get_disciplina.php',
+        type: 'GET',
+        data: { id: id_disciplina },
+        dataType: 'json',
+        success: function (disciplina) {
+            console.log("Disciplina:", disciplina);
+
+            $('#conteudoPrincipal').text(disciplina.nome_disciplina);
+        },
+        error: function (xhr, status, error) {
+            console.error("Erro na requisição AJAX para obter a disciplina:", error);
+        }
+    });
 
     $.ajax({
         url: 'actions/get_questoes.php',
@@ -9,7 +23,6 @@ $(document).ready(function () {
         data: { id: id_disciplina }, // Passa o ID como parâmetro na requisição AJAX
         dataType: 'json',
         success: function (data) {
-            console.log("Dados recebidos:", data); // Verifica os dados recebidos
             data.forEach(function (questao) {
                 var alternativasHTML = questao.alternativas.map(function (alternativa, index) {
                     var correta = Number(alternativa.correta);
@@ -38,9 +51,30 @@ $(document).ready(function () {
 
                 $('#listaQuestoes').append(questoesHTML);
             });
+
+            // Chama a função de filtragem após adicionar as questões dinamicamente
+            filtrarQuestoes();
         },
         error: function (xhr, status, error) {
             console.error("Erro na requisição AJAX:", error);
         }
     });
+
+    function filtrarQuestoes() {
+        const searchInput = document.getElementById('searchInput');
+        const searchText = searchInput.value.toLowerCase();
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const questionText = item.querySelector('.accordion-button').textContent.toLowerCase();
+
+            if (questionText.includes(searchText)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    $('#searchInput').on('input', filtrarQuestoes);
 });

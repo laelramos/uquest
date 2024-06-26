@@ -4,27 +4,22 @@
 'use strict';
 
 (function () {
-    // Comment editor
 
-    const commentEditor = document.querySelector('.comment-editor');
+  const commentEditor = document.querySelector('.comment-editor');
 
-    if (commentEditor) {
-        new Quill(commentEditor, {
-            modules: {
-                toolbar: '.comment-toolbar'
-            },
-            placeholder: 'Descrição da disciplina',
-            theme: 'snow',
-            name: 'descricaoDisciplina'
+  if (commentEditor) {
+    new Quill(commentEditor, {
+      modules: {
+        toolbar: '.comment-toolbar'
+      },
+      placeholder: 'Descrição da disciplina',
+      theme: 'snow',
+      name: 'descricaoDisciplina'
 
-        });
-    }
+    });
+  }
 
-    // previewTemplate: Updated Dropzone default previewTemplate
-
-    // ! Don't change it unless you really know what you are doing
-
-    const previewTemplate = `<div class="dz-preview dz-file-preview">
+  const previewTemplate = `<div class="dz-preview dz-file-preview">
                               <div class="dz-details">
                                 <div class="dz-thumbnail">
                                   <img data-dz-thumbnail>
@@ -41,6 +36,5 @@
                               </div>
                               </div>`;
 
-    // ? Start your code from here
 
 })();
